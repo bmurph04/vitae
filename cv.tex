@@ -121,11 +121,12 @@
     
 \newenvironment{joblong}[4]
     {
+    \begin{minipage}[t]{\linewidth}
     \begin{tabularx}{\linewidth}{@{}l X r@{}}
     \textbf{#1} & \hfill &  #2 \\[0.5pt]
     \hspace{1mm} #3 & & #4 \\[3.75pt]
     \end{tabularx}
-    \begin{minipage}[t]{\linewidth}
+    
     \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
     }
     {
@@ -222,13 +223,14 @@ Extended reality, computer vision, human-computer interaction (HCI), assistive t
 \item Curated a company dataset by collecting multimodal data from live surgical procedures for future model training and evaluation.
 \end{joblong}
 
-\begin{joblong}{Software Development Engineer Intern}{June 2024 - August 2024}{\textit{Amazon}}{Seattle, WA}
+\begin{joblong}{Software Development Engineer Intern}{June 2024 - August 2024 (Year 2)}{\textit{Amazon}}{Seattle, WA}
 \item Engineered a seller-facing dashboard to provider Amazon sells with key insights into their claims data, enhancing transparency and boosting the Seller Positive Response Rate.
 \item Developed an API to deliver aggregate, filterable seller claim data, improving data representation and analysis.
 \item Built a data pipeline to efficiently process bulk claim data, storing it in a DynamoDB table to reduce production traffic and increase efficiency.
 \end{joblong}
 
-\begin{joblong}{Software Development Engineer Intern}{June 2023 - August 2023}{\textit{Amazon}}{Seattle, WA}
+\vspace{3em}
+\begin{joblong}{Software Development Engineer Intern}{June 2023 - August 2023 (Year 1)}{\textit{Amazon}}{Seattle, WA}
 \item Developed a real-time dashboard to monitor internal data quality across multiple departments, reducing inconsistent and incomplete seller records.
 \item Built a data pipeline to process and store bulk data for analysis of aggregate seller record data.
     
