@@ -73,6 +73,7 @@
 
 %custom \section
 \usepackage{titlesec}				
+\usepackage[utf8]{inputenc}
 \usepackage{multicol}
 \usepackage{multirow}
 
@@ -86,7 +87,7 @@
 
 %Setup hyperref package, and colours for links
 \usepackage[unicode, draft=false]{hyperref}
-\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\definecolor{linkcolour}{rgb}{0,0.0,0.0}
 \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
 \addbibresource{citations.bib}
 \setlength\bibitemsep{1em}
@@ -97,21 +98,32 @@
 %debug page outer frames
 %\usepackage{showframe}
 
+% added
+\usepackage{listings}
+\usepackage{kotex}
+
 
 % job listing environments
-\newenvironment{jobshort}[2]
+\newenvironment{jobshort}[4]
     {
+    \noindent
     \begin{tabularx}{\linewidth}{@{}l X r@{}}
-    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+        \textbf{#1} & \hfill &  #2 \\[0.5pt]
+        \hspace{1mm} #3 & & #4 \\
     \end{tabularx}
+    
+    \begin{list}{}{\setlength{\leftmargin}{2mm} \setlength{\topsep}{0pt} \setlength{\parsep}{0pt}}
+    \item[] 
     }
     {
+    \end{list}
     }
-
-\newenvironment{joblong}[2]
+    
+\newenvironment{joblong}[4]
     {
     \begin{tabularx}{\linewidth}{@{}l X r@{}}
-    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \textbf{#1} & \hfill &  #2 \\[0.5pt]
+    \hspace{1mm} #3 & & #4 \\[3.75pt]
     \end{tabularx}
     \begin{minipage}[t]{\linewidth}
     \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
@@ -142,73 +154,160 @@
 % \end{tabularx}
 
 \begin{tabularx}{\linewidth}{@{} C @{}}
-\Huge{Your Name} \\[7.5pt]
-\href{https://github.com/username}{\raisebox{-0.05\height}\faGithub\ username} \ $|$ \ 
-\href{https://linkedin.com/in/username}{\raisebox{-0.05\height}\faLinkedin\ username} \ $|$ \ 
-\href{https://mysite.com}{\raisebox{-0.05\height}\faGlobe \ mysite.com} \ $|$ \ 
-\href{mailto:email@mysite.com}{\raisebox{-0.05\height}\faEnvelope \ email@mysite.com} \ $|$ \ 
-\href{tel:+000000000000}{\raisebox{-0.05\height}\faMobile \ +00.00.000.000} \\
+\Huge{Brendon Murphy} \\[7.5pt]
+\href{https://github.com/bmurph04}{\raisebox{-0.05\height}\faGithub\ bmurph04} \ $|$ \ 
+\href{https://www.linkedin.com/in/brendonmurphy4012/}{\raisebox{-0.05\height}\faLinkedin\ brendonmurphy4012} \ $|$ \ 
+% \href{https://mysite.com}{\raisebox{-0.05\height}\faGlobe \ mysite.com} \ $|$ \ 
+\href{mailto:bmurph@mit.edu}{\raisebox{-0.05\height}\faEnvelope \ bmurph@mit.edu} \ $|$ \ 
+\href{tel:+014076162411}{\raisebox{-0.05\height}\faMobile \ +01.407.616.2411} \\
 \end{tabularx}
+
+%Interests/ Keywords/ Summary
+\section{Research Interests}
+Extended reality, computer vision, human-computer interaction (HCI), assistive technologies
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+
+\begin{jobshort}{Massachusetts Institute of Technology (MIT)}{August 2022 - June 2026 (expected)}{B.S. in Artifical Intelligence and Decision Making}{GPA: 4.8/5.0}
+
+\vspace{-2mm}
+\begin{itemize}
+    \item Minor in Music
+\end{itemize}
+\vspace{1mm}
+
+\textit{Relevant coursework}: Advances in Computer Vision, Deep Learning, Computer Graphics, Computational Photography, AI Decision-Making and Ethics, Signal Processing, Interactive Music Systems 
+\end{jobshort}
+
+\begin{jobshort}{University of Central Florida (UCF)}{August 2019 - May 2022}{Dual Enrollment Student Program studying Computer Science}{GPA: 5.0/5.0}
+
+\vspace{-2mm}
+\begin{itemize}
+    \item Enrolled while in high school
+\end{itemize}
+\vspace{1mm}
+\textit{Relevant coursework}: Computer Logic and Design, Object-Oriented Programming, Discrete Math
+\end{jobshort}
+
+% \begin{tabularx}{\linewidth}{@{}l X@{}}	
+% 2030 - present & PhD (Subject) at \textbf{University} \hfill \normalsize (GPA: 4.0/4.0) \\
+
+% 2023 - 2027 & Bachelor's Degree at \textbf{College} \hfill (GPA: 4.0/4.0) \\ 
+
+% 2022 & Class 12th Some Board \hfill  (Grades) \\
+
+% 2021 & Class 10th Some Board \hfill  (Grades) \\
+% \end{tabularx}
 
 %----------------------------------------------------------------------------------------
 % EXPERIENCE SECTIONS
 %----------------------------------------------------------------------------------------
 
-%Interests/ Keywords/ Summary
-\section{Summary}
-This CV can also be automatically compiled and published using GitHub Actions. For details, \href{https://github.com/jitinnair1/autoCV}{click here}.
-
 %Experience
+\section{Research Experience}
+
+\begin{joblong}{Primary School Augmented Reality Experiences}{September 2024 - February 2025}{\textit{Scheller Teacher Education Program}}{Cambridge, MA}
+\item Contributed to the software development of uagmented reality educational experiences to implement mixed reality teaching in primary school classrooms.
+\item Created interactive visual supplements to increase the effectiveness of teaching.
+\end{joblong}
+
+%Work Experience
 \section{Work Experience}
 
-\begin{jobshort}{Designation}{Jan 2021 - present}
-long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width
-\end{jobshort}
+\begin{joblong}{Computer Vision Software Engineer Intern}{June 2025 - August 2025}{\textit{코넥티브 (CONNECTEVE)}}{Seoul, Korea}
+\item Extended a computer vision AI model for real-time scene understanding and graph generation in operating rooms, enabling next-action anticipation and sterility breach detection.
+\item Curated a company dataset by collecting multimodal data from live surgical procedures for future model training and evaluation.
+\end{joblong}
 
+\begin{joblong}{Software Development Engineer Intern}{June 2024 - August 2024}{\textit{Amazon}}{Seattle, WA}
+\item Engineered a seller-facing dashboard to provider Amazon sells with key insights into their claims data, enhancing transparency and boosting the Seller Positive Response Rate.
+\item Developed an API to deliver aggregate, filterable seller claim data, improving data representation and analysis.
+\item Built a data pipeline to efficiently process bulk claim data, storing it in a DynamoDB table to reduce production traffic and increase efficiency.
+\end{joblong}
 
-\begin{joblong}{Designation}{Mar 2019 - Jan 2021}
-\item long long line of blah blah that will wrap when the table fills the column width
-\item again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah. again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah
+\begin{joblong}{Software Development Engineer Intern}{June 2023 - August 2023}{\textit{Amazon}}{Seattle, WA}
+\item Developed a real-time dashboard to monitor internal data quality across multiple departments, reducing inconsistent and incomplete seller records.
+\item Built a data pipeline to process and store bulk data for analysis of aggregate seller record data.
+    
 \end{joblong}
   
 %Projects
 \section{Projects}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Some Project} & \hfill \href{https://some-link.com}{Link to Demo} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width}  \\
+\textbf{Utilizing Neural Style Transfer for Skin Disease Inequities} & \hfill {April 2024} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Implemented a computer vision AI model that uses neural style transfer on raw images capturing skin diseases on people of color to generate transformed images displaying the same disease content on lighter skin. These images are more accurately classified as malignant or benign by existing skin classification industry models, increasing the ROC AUC from .528 to .572 for malignancy detection in people of color.}  \\
 \end{tabularx}
 
-%----------------------------------------------------------------------------------------
-%	EDUCATION
-%----------------------------------------------------------------------------------------
-\section{Education}
-\begin{tabularx}{\linewidth}{@{}l X@{}}	
-2030 - present & PhD (Subject) at \textbf{University} \hfill \normalsize (GPA: 4.0/4.0) \\
-
-2023 - 2027 & Bachelor's Degree at \textbf{College} \hfill (GPA: 4.0/4.0) \\ 
-
-2022 & Class 12th Some Board \hfill  (Grades) \\
-
-2021 & Class 10th Some Board \hfill  (Grades) \\
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Uncovering Latent Stereotypes in Safety-Aligned VLMs} & \hfill {November 2025} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Developed a lightweight introspective probe for Vision-Language Models (VLMs) to map bias propagation across hidden layers. Demonstrated that industry-standard models retain deep-seated entanglements between demographics and professional competency in their latent representations, even when fine-tuned for fairness and safety.}\\
 \end{tabularx}
 
-%----------------------------------------------------------------------------------------
-%	PUBLICATIONS
-%----------------------------------------------------------------------------------------
-\section{Publications}
-\begin{refsection}[citations.bib]
-\nocite{*}
-\printbibliography[heading=none]
-\end{refsection}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{``Housekeepr": Creating a Python-Based Rhythm Game} & \hfill {November 2024} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Architected a modular, object-oriented game engine in Python (Kivy, PyAudio), designing a scalable component system where distinct mechanics ("Gem", "Beat", "Button") operate as independent modules. Leveraged class inheritance to enable rapid prototyping of new gameplay features without refactoring the core render loop. Engineered a custom low-latency audio controller to handle real-time signal processing. Implemented a data-driven content pipeline that parses complex beat maps to dynamically instantiate gameplay modules at runtime.}  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Using Real-Time Weather APIs for LED Lighting} & \hfill {November 2022} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Engineered a real-time weather visualization system that translates meteorological data into ambient lighting effects. Interfaced with the OpenWeatherMap RESTful API to fetch and parse JSON datasets, applying conditional logic to map precipitation and time-of-day metrics to specific RGB outputs. To improve system autonomy, I refactored the initial architecture from a PC-tethered Serial connection to a decentralized, wireless model using the ESP8266, enabling the application to run as a headless, standalone service.}  \\
+\end{tabularx}
+
+%Leadership
+\section{Leadership}
+\begin{joblong}{President, Student Dormitory (MacGregor House)}{December 2024 - Jan 2026}{}{}
+\vspace{-1.25em}
+\item Preside over the executive student government for a dormitory of 300+ undergraduates, leading weekly strategic meetings to align objectives and boost civic engagement.
+\item Spearhead initiatives to improve facility quality and resident satisfaction, delegating operational tasks across a multi-member leadership team to maximize execution efficiency.
+\end{joblong}
+
+\begin{joblong}{President, MIT LIVE (Band Management Club)}{August 2025 - January 2026}{}{}
+\vspace{-1.25em}
+\item Direct the strategic operations of a 60-member music organization, overseeing event production, talent management, and member retention strategies.
+\item Drive revenue growth by negotiating paid performance contracts with campus organizations and external venues, establishing LIVE as a premier entertainment service at MIT.
+\item Orchestrate cross-campus partnerships, selling performance services to other executive boards to maximize member exposure and gig opportunities.
+\end{joblong}
+
+\begin{joblong}{Treasurer, MIT LIVE (Band Management Club)}{    May 2023 - August 2025}{}{}
+\vspace{-1.25em}
+\item Managed a semesterly operating budget of \$9,000, optimizing capital allocation for instrument procurement, equipment maintenance, and event logistics.
+\item Led the end-to-end development of a dedicated recording studio, executing a \$1,600 capital project to acquire audio interfaces, soundproofing, and decorative assets, resulting in a fully operational production space.
+\item Streamlined the reimbursement workflow for executive members and forecasted budget requirements for large-scale semester showcases.
+\end{joblong}
+
+\begin{joblong}{Vice President, Student Dormitory (MacGregor House)}{April 2023 - December 2024}{}{}
+\vspace{-1.25em}
+\item Acted as the primary liaison between the student body and senior faculty, translating resident feedback into actionable policy changes that improved quality of life.
+\item Mediated conflict resolution and addressed urgent logistical challenges, collaborating with the President to implement long-term governance strategies to avoid crises that would significantly alter resident experience.
+\end{joblong}
+
+\begin{joblong}{Pit Orchestra Director, MIT Theatre Clubs}{February 2025 - April 2025}{\textit{MIT Musical Theatre Guild, MIT Next Act}}{October 2023 - November 2023}
+\item Directed a 15-piece orchestra for full-scale musical productions, conducting bi-weekly rehearsals and providing technical instruction to musicians of varying skill levels.
+\item Coordinated with the theatrical director to synchronize musical cues with on-stage action, ensuring seamless live performances.
+    
+\end{joblong}
+
+% %----------------------------------------------------------------------------------------
+% %	PUBLICATIONS
+% %----------------------------------------------------------------------------------------
+% \section{Publications}
+% \begin{refsection}[citations.bib]
+% \nocite{*}
+% \printbibliography[heading=none]
+% \end{refsection}
 
 %----------------------------------------------------------------------------------------
 %	SKILLS
 %----------------------------------------------------------------------------------------
 \section{Skills}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-Some Skills &  \normalsize{This, That, Some of this and that etc.}\\
-Some More Skills  &  \normalsize{Also some more of this, Some more that, And some of this and that etc.}\\  
+\textbf{Programming:} &  \normalsize{Python, Java, C, C++, C\#, SQL, Scala}\\
+\textbf{Libraries/Frameworks:}  &  \normalsize{NumPy, PyTorch, Kivy, GLOO, Amazon Web Services (AWS)}\\  
+\textbf{Languages:} & \normalsize{English (Native), Korean (Limited working proficiency)}
 \end{tabularx}
 
 \vfill
